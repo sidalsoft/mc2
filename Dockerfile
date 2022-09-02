@@ -9,6 +9,6 @@ EXPOSE 8081
 
 RUN mkdir /app
 
-COPY --from=build /home/gradle/src/build/libs/*.jar /app/mc2.jar
+COPY --from=build /home/gradle/src/build/libs/MC2-0.0.1-SNAPSHOT.jar /app/mc2.jar
 
 ENTRYPOINT ["java", "-XX:+UnlockExperimentalVMOptions", "-Djava.security.egd=file:/dev/./urandom","-jar","/app/mc2.jar"]
