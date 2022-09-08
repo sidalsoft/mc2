@@ -1,7 +1,7 @@
-FROM gradle:7.5-jdk17-alpine AS build
+FROM gradle:7-jdk17-alpine AS build
 COPY --chown=gradle:gradle . /home/gradle/src
 WORKDIR /home/gradle/src
-RUN gradle build --no-daemon
+RUN gradle clean bootJar --no-daemon
 
 FROM openjdk:17.0.1-jdk-slim
 
