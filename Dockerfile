@@ -1,7 +1,7 @@
 FROM gradle:7.5.0-jdk18 AS build
 COPY --chown=gradle:gradle . /home/gradle/src
 WORKDIR /home/gradle/src
-RUN gradle wrapper
+RUN gradle bootJar
 
 FROM openjdk:18
 
